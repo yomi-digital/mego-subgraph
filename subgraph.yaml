@@ -1,0 +1,62 @@
+specVersion: 0.0.1
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: PolygonME
+    network: matic
+    source:
+      address: "0xe51690e6ccf8f388d683d6a55ffb56dfc5d6bdde"
+      abi: PolygonME
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.5
+      language: wasm/assemblyscript
+      entities:
+        - Approval
+        - ApprovalForAll
+        - Transfer
+        - Approval1
+        - ApprovalForAll1
+        - Transfer1
+        - Approval2
+        - ApprovalForAll2
+        - Transfer2
+        - OwnershipTransferred
+        - Approval3
+        - ApprovalForAll3
+        - OwnershipTransferred1
+        - Transfer3
+      abis:
+        - name: PolygonME
+          file: ./abis/PolygonME.json
+      eventHandlers:
+        - event: Approval(indexed address,indexed address,indexed uint256)
+          handler: handleApproval
+        - event: ApprovalForAll(indexed address,indexed address,bool)
+          handler: handleApprovalForAll
+        - event: Transfer(indexed address,indexed address,indexed uint256)
+          handler: handleTransfer
+        - event: Approval(indexed address,indexed address,indexed uint256)
+          handler: handleApproval1
+        - event: ApprovalForAll(indexed address,indexed address,bool)
+          handler: handleApprovalForAll1
+        - event: Transfer(indexed address,indexed address,indexed uint256)
+          handler: handleTransfer1
+        - event: Approval(indexed address,indexed address,indexed uint256)
+          handler: handleApproval2
+        - event: ApprovalForAll(indexed address,indexed address,bool)
+          handler: handleApprovalForAll2
+        - event: Transfer(indexed address,indexed address,indexed uint256)
+          handler: handleTransfer2
+        - event: OwnershipTransferred(indexed address,indexed address)
+          handler: handleOwnershipTransferred
+        - event: Approval(indexed address,indexed address,indexed uint256)
+          handler: handleApproval3
+        - event: ApprovalForAll(indexed address,indexed address,bool)
+          handler: handleApprovalForAll3
+        - event: OwnershipTransferred(indexed address,indexed address)
+          handler: handleOwnershipTransferred1
+        - event: Transfer(indexed address,indexed address,indexed uint256)
+          handler: handleTransfer3
+      file: ./src/mapping.ts
