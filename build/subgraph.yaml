@@ -1,6 +1,6 @@
 specVersion: 0.0.2
 schema:
-  file: ./schema.graphql
+  file: schema.graphql
 dataSources:
   - kind: ethereum
     name: PolygonME
@@ -20,7 +20,7 @@ dataSources:
         - OwnershipTransferred
       abis:
         - name: PolygonME
-          file: ./abis/PolygonME.json
+          file: PolygonME/abis/PolygonME.json
       eventHandlers:
         - event: Approval(indexed address,indexed address,indexed uint256)
           handler: handleApproval
@@ -28,4 +28,4 @@ dataSources:
           handler: handleApprovalForAll
         - event: Transfer(indexed address,indexed address,indexed uint256)
           handler: handleTransfer
-      file: ./src/mapping.ts
+      file: PolygonME/PolygonME.wasm

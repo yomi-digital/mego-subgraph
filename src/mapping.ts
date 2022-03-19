@@ -107,26 +107,3 @@ export function handleApprovalForAll(event: ApprovalForAll): void {}
 
 export function handleTransfer(event: Transfer): void {}
 
-export function handleApproval1(event: Approval1): void {}
-
-export function handleApprovalForAll1(event: ApprovalForAll1): void {}
-
-export function handleTransfer1(event: Transfer1): void {}
-
-export function handleApproval2(event: Approval2): void {}
-
-export function handleApprovalForAll2(event: ApprovalForAll2): void {}
-
-export function handleTransfer2(event: Transfer2): void {}
-
-export function handleOwnershipTransferred(event: OwnershipTransferred): void {}
-
-export function handleApproval3(event: Approval3): void {}
-
-export function handleApprovalForAll3(event: ApprovalForAll3): void {}
-
-export function handleOwnershipTransferred1(
-  event: OwnershipTransferred1
-): void {}
-
-export function handleTransfer3(event: Transfer3): void {}
